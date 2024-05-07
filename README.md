@@ -1,2 +1,3 @@
 # Brackeys-Godot-Beginner-Tutorial
- Followed Brackey's first beginner Godot tutorial
+
+Learning Godot by following Brackey's first [beginner tutorial](https://youtu.be/LOhfqjmasi0?si=CofKmzINZp6uGNne)

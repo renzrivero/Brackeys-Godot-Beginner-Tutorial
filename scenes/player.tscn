@@ -185,3 +185,7 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_csvyn")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

@@ -9,13 +9,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+@onready var coyote_timer = $CoyoteTimer
+var was_on_floor = false
+
 func _physics_process(delta):
-	# Add the gravity.
+	was_on_floor = is_on_floor()
+	
+	# Add the gravity and start coyote timer
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		coyote_timer.start()
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	# Allow jump only if on floor or the coyote timer is running
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction: -1, 0, 1
